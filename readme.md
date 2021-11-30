@@ -33,6 +33,7 @@ The library is highly modularized and extensible (feel free to fork this project
     - abstract class `PopulationInitializer` used by the `optimizer` module
         - `BinaryPopulationInitializer`: an example of initializer for a population of binary strings.
 <br/>
+
 - `crossover`: functions that perform the "*reproductive step*" of the evolutionary process, by producing several individuals of the population from parents selected from the previous one
     - abstract class `CrossoverMethod` for the typical implementation of a *crossover function*
         - `RandomSplit`: an example of a crossover method that, given two parents, generates two children that either identical to the parents or (with a certain *probability*) selecting a random point in the parents and swapping each the second half of the first parent with the second half of the second parent, e.g.:
