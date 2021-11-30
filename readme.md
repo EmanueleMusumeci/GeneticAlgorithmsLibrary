@@ -60,8 +60,10 @@ The library is highly modularized and extensible (feel free to fork this project
 <br/>
 
 - `fitness_evaluation`: selection of functions that compute the fitness ("*quality*") of each populatuion individual, that can be considered as an ***objective function*** for the optimization problem:
+
     - abstract class `FitnessEvaluationMethod`, typical fitness function wrapper used by the optimizer class 
         <br />
+        
         - `OneMax`: fitness function for the *OneMax* problem, which just counts the number of *1*s in the string (the higher, the better the quality of the individual)
         
         <br />
@@ -69,7 +71,7 @@ The library is highly modularized and extensible (feel free to fork this project
         - `ClusterAccuracy`: it makes sense to use this objective function *only in case we have access to the ground truth labels for the clustering problem at hand*. It just computes the accuracy after the data points have been clustered using the given subset of dataset dimensions (selected based on the *1*s in the binary string)
 
         <br/>
-        
+
         - `ClusterCentroidDistance`: without ground truth labels, bases the fitness values of the currently selected subset of data fields on the separation (euclidean distance) of the centroids computed for the clusters obtained by the clustering process, so as to increase the separation of clusters in "confusionary"
         - `ClusterMinimumPointDistance`: without ground truth labels, the fitness value is computed on the minimum distance between points of the different clusters, so as to increase the overall separation of clusters in not too "confusionary" datasets
         - `ClusterAveragePointDistanceFromCentroid`: without ground truth labels, bases the fitness values of the currently selected subset of data fields on the average of the distances of each point from its clusters centroid, so as to increase the concentration of data points towards their clusters centroids
@@ -83,11 +85,14 @@ The library is highly modularized and extensible (feel free to fork this project
     - abstract class `VisualizationMethod`
         - `Print`: just prints the solution (used in the *OneMax* problem)
         <br/>
+
         - abstract class `ClusterVisualizer` providing the capability to initialize a visualization method for the clustering problem and to generate a GIF to show the evolutionary progress of this problem
             - `Cluster2DVisualizer`: generates a 2D projection (performed through PCA) of the clustered dataset (each cluster is represented with a color)
             - `Cluster3DVisualizer`: generates a 3D projection (performed through PCA) of the clustered dataset
             - `Cluster2D3DVisualizer`: wraps and executes both above methods
+            
             <br/>
+
             NOTICE: the clustering and optimization happens in a higher-dimensional space, where the dimensions are selected by the optimization process, while the visualization happens on the original dataset (appropriately projected through PCA)
 <br/>
 
