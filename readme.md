@@ -1,6 +1,6 @@
 This library provides a vanilla implementation of a [genetic algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm), currently supporting only the optimization of binary strings (so in order to use it you'll have to find a way to translate the binary string in the actual solution to your problem).
 
-####Toy problems
+#### Toy problems
 Two toy problems are provided:
 
 - **OneMax** optimization: the *goal* of this problem is to obtain a binary string of only *1*s, starting from a random binary string. Despite the apparent triviality of this task, this has to be achieved through ***random mutations*** of the initial "*population*" of strings.
@@ -8,7 +8,7 @@ Two toy problems are provided:
 - **Unsupervised feature selection for clustering** in high-dimensional spaces: given a *high-dimensional dataset*, an **evolutionary approach** can be used to determine which data fields are useful for the **unsupervised classification** of samples. 
 This is especially useful if we have little to no knowledge about *semantics* behind the data fields (the various *dimensions* of each data point) and their relative importance in the *clustering* of each sample (their classification into groups).
 
-####Modules
+#### Modules
 The library is highly modularized and extensible (feel free to fork this project), into the following modules:
 
 - `optimization`: provides the `GenericBinaryOptimizer` class, that wraps the ***genetic algorithm*** itself, with the following methods:
@@ -99,7 +99,7 @@ The library is highly modularized and extensible (feel free to fork this project
     - `load_blob_dataset` that restores a saved dataset given the *.csv* file directory
     - `samples_to_numpy_array` given a N-dimensional binary string, where N is the dimensionality of each data point, returns a 2D numpy array from all data points in the dataset where each data point only has those dimensions that were selected by a *1* in the binary string
 
-####Use case: *Unsupervised feature selection for clustering*
+#### Use case: *Unsupervised feature selection for clustering*
 
 A possible use case for this library is provided in the `ClusteringExample.py` file. In particular, let's focus on the following bits of code:
 
@@ -193,6 +193,6 @@ This is the final result of our clustering process:
     - In 3D:
     ![Comparison between original cluster assignment and clustering obtained at the end of the optimization process in 3D](snapshots/GMM_3_clusters_Accuracy_normalized/images/3d_final_result_comparison.png)
 
-####Use case: *OneMax problem*
+#### Use case: *OneMax problem*
 
 The `OneMax` problem is instead the problem of evolutionarily optimizing a random binary string to obtain a string of only *1*s. An example of this problem can be found in the file `OneMaxExample.py`.
