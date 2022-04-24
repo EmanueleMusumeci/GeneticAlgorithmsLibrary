@@ -4,7 +4,7 @@ This library provides a vanilla implementation of a [genetic algorithm](https://
 Two toy problems are provided:
 
 - **OneMax** optimization: the *goal* of this problem is to obtain a binary string of only *1*s, starting from a random binary string. Despite the apparent triviality of this task, this has to be achieved through ***random mutations*** of the initial "*population*" of strings.
-<br/>
+
 - **Unsupervised feature selection for clustering** in high-dimensional spaces: given a *high-dimensional dataset*, an **evolutionary approach** can be used to determine which data fields are useful for the **unsupervised classification** of samples. 
 This is especially useful if we have little to no knowledge about *semantics* behind the data fields (the various *dimensions* of each data point) and their relative importance in the *clustering* of each sample (their classification into groups).
 
